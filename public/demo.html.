@@ -3,70 +3,81 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PhotoShare — Security Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social App — Login Demo</title>
 <style>
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
   background: #fafafa;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-.card {
-  width: 350px;
-  padding: 35px 30px;
+.container { width: 350px; text-align: center; }
+.panel {
   background: white;
   border: 1px solid #ddd;
-  text-align: center;
+  padding: 38px 35px 25px;
 }
-.logo { font-size: 32px; font-weight: bold; margin-bottom: 25px; }
-input, button {
+.logo {
+  font-family: cursive;
+  font-size: 43px;
+  margin-bottom: 30px;
+}
+input {
   width: 100%;
-  padding: 13px;
-  margin: 6px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background: #fafafa;
 }
 button {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 7px;
   background: #3897f0;
   color: white;
-  border: 0;
   font-weight: bold;
-  cursor: pointer;
+  margin-top: 10px;
 }
-.notice {
-  margin-top: 22px;
-  padding: 12px;
+.demo {
   background: #fff4d6;
-  font-size: 13px;
+  border: 1px solid #e8d39b;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 12px;
   line-height: 1.5;
 }
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="logo">PhotoShare</div>
-  <p>Security Awareness Demonstration</p>
-  <form id="demo">
-    <input placeholder="Demo username" autocomplete="off" required>
-    <input placeholder="Dummy password" type="password" autocomplete="off" required>
-    <button type="submit">Continue</button>
-  </form>
-  <div id="result"></div>
-  <div class="notice">
-    Training demo only. Never enter your real Instagram password
-    into an unfamiliar website.
+<div class="container">
+  <div class="panel">
+    <div class="logo">Social</div>
+    <p>Security awareness login mockup</p>
+    <form id="demo">
+      <input placeholder="Demo username" required>
+      <input type="password" placeholder="Dummy password" required>
+      <button type="submit">Continue</button>
+    </form>
+    <p id="message"></p>
+    <div class="demo">
+      DEMONSTRATION ONLY<br>
+      This is not Instagram. Never enter real account credentials.
+    </div>
   </div>
 </div>
 <script>
 document.getElementById("demo").addEventListener("submit", function(e) {
   e.preventDefault();
   this.reset();
-  document.getElementById("result").textContent =
-    "Demo complete! Always verify the website before signing in.";
+  document.getElementById("message").textContent =
+    "Demo completed. Always verify the website before signing in.";
 });
 </script>
 </body>
