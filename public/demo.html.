@@ -1,66 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Security Awareness Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhotoShare — Security Demo</title>
 <style>
+* { box-sizing: border-box; }
 body {
   margin: 0;
-  background: #fafafa;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  background: #fafafa;
+  font-family: Arial, sans-serif;
 }
 .card {
+  width: 350px;
+  padding: 35px 30px;
   background: white;
   border: 1px solid #ddd;
-  padding: 35px;
-  width: 290px;
   text-align: center;
 }
+.logo { font-size: 32px; font-weight: bold; margin-bottom: 25px; }
 input, button {
-  box-sizing: border-box;
   width: 100%;
-  padding: 12px;
-  margin: 7px 0;
+  padding: 13px;
+  margin: 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
-input { border: 1px solid #ddd; }
 button {
-  background: #3867e8;
+  background: #3897f0;
   color: white;
   border: 0;
+  font-weight: bold;
   cursor: pointer;
 }
 .notice {
-  color: #b42318;
-  font-size: 14px;
-  margin-top: 18px;
+  margin-top: 22px;
+  padding: 12px;
+  background: #fff4d6;
+  font-size: 13px;
+  line-height: 1.5;
 }
 </style>
 </head>
 <body>
 <div class="card">
-  <h2>PhotoShare</h2>
-  <p>Security Awareness Training Demo</p>
-
+  <div class="logo">PhotoShare</div>
+  <p>Security Awareness Demonstration</p>
   <form id="demo">
-    <input placeholder="Dummy username" autocomplete="off">
-    <input type="password" placeholder="Dummy password"
-           autocomplete="off">
-    <button type="submit">Test demo</button>
+    <input placeholder="Demo username" autocomplete="off" required>
+    <input placeholder="Dummy password" type="password" autocomplete="off" required>
+    <button type="submit">Continue</button>
   </form>
-
-  <p id="result" class="notice"></p>
+  <div id="result"></div>
+  <div class="notice">
+    Training demo only. Never enter your real Instagram password
+    into an unfamiliar website.
+  </div>
 </div>
-
 <script>
 document.getElementById("demo").addEventListener("submit", function(e) {
   e.preventDefault();
   this.reset();
   document.getElementById("result").textContent =
-    "Training demo: Never enter your real password on an unverified website.";
+    "Demo complete! Always verify the website before signing in.";
 });
 </script>
 </body>
